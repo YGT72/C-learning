@@ -1,0 +1,9 @@
+﻿  Variables.cpp
+C:\Users\6buzz\Desktop\Coding projects\C++\Variables\Variables\Variables.cpp(7,22): warning C4305: 'initializing': truncation from 'int' to 'char'
+C:\Users\6buzz\Desktop\Coding projects\C++\Variables\Variables\Variables.cpp(7,17): warning C4309: 'initializing': truncation of constant value
+  Generating code
+  1 of 118 functions ( 0.8%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finished generating code
+  Variables.vcxproj -> C:\Users\6buzz\Desktop\Coding projects\C++\Variables\x64\Release\Variables.exe
