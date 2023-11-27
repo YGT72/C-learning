@@ -186,13 +186,16 @@ cout << "Write the number next to it to do that operation!\n";
 int selectedValue;
 cin >> selectedValue;
 if (selectedValue == 1) {
-cout << sqrt(addit);
+	cout << sqrt(addit);
 }
-if (selectedValue == 2) {
+else if (selectedValue == 2) {
 	cout << round(addit);
 }
-if (selectedValue == 3) {
+else if(selectedValue == 3) {
 	cout << log(addit);
+}
+else  {
+	cout << "You did not write a number on the list or you wrote a letter!\n";
 }
 /*
 Very often in programming you will use true and false,simple right?
@@ -229,8 +232,259 @@ if (myAge >= drivingAge) {
 }
 
 // Outputs: Old enough to drive! However if MyAge wasn't a higher value it would output 'Not old enough to drive'
+-----------------
+If else statements
+In c++ you can use statements to filter out unwanted stuff for example
+
+use if to specify a block of code to be execute when the condition is true
+
+if (10 > 5) {
+  cout << "10 is greater than 5 wow!";
+}
+
+use else to specify a block of code to be executed if the condition is false
+
+if (10 < 5) {
+  cout << "10 is greater than 5 wow!";
+} else {
+  cout << "5 is smaller than 10 wow";
+}
+use else if to do a new condition to test if the first is false
+
+if (10 < 5) {
+  cout << "10 is greater than 5 wow!";
+} else if (10 > 5) {
+  cout << "5 is smaller than 10 wow";
+} else {
+  cout << "The values are equal!";
+}
+
+and use switch to specify many alternative blocks of code to be executed
+
+The switch expression is evaluated once
+
+The value of the expression is compared with the values of each case
+
+If there is a match, the associated block of code is executed
+
+int day = 6;
+switch (day) {
+  case 1:
+	cout << "Monday";
+	break;
+  case 2:
+	cout << "Tuesday";
+	break;
+  case 3:
+	cout << "Wednesday";
+	break;
+  case 4:
+	cout << "Thursday";
+	break;
+  case 5:
+	cout << "Friday";
+	break;
+  case 6:
+	cout << "Saturday";
+	break;
+  case 7:
+	cout << "Sunday";
+	break;
+}
+Will print out Saturday because it is day 6
+
+BREAK
+
+When a piece of code reaches a break keyword it will break out of the switch block
+This will stop the execution of more code in the block
+a break can save lots of time as it prevents execution of all the code in the switch block
+
+DEFAULT
+
+The default keyword specifies a code to run if there is no matches with a switch
+-----------------------
+Loops
+
+Loops can execute a block of code as long as a condition is reached
+They make it so it is easier to read code, reduce errors and save time
+
+While
+
+The while keyword loops through a block of code as long as the condition is true
+*/
+int i = 0;
+while (i < 99999) {
+	cout <<"Current value is " << i << " gonna keep going till 99999!" << "\n";
+	i++;
+}
+if (i == 99999) {
+	cout << "The value has reached 99999\n";
+}
+/*
+Do/while loop
+This is a variant of the while loop
+This variant will execute the code once then check if the condition is still true
+If it is the code will keep repeating untill the condition is false
+format#
+do {
+  // code block to be executed
+}
+while (condition);
+
+
+For loop
+Another variantion of the while loop
+this is when you know exactly how many times you want the code to loop through your project
+format#
+
+for (statement 1; statement 2; statement 3) {
+  // code block to be executed
+}
+Statement 1 is executed (once) before the execution of the code block.
+
+Statement 2 defines the condition for executing code block.
+
+Statement 3 is executed (every time) after the code block has been executed.
+Example below (Taken from W3schools)
+*/
+for (int i = 0; i < 5; i++) {
+	cout << i << "\n";
+}
+/*
+Statement 1 sets a variable before the loop starts (int i = 0).
+
+Statement 2 defines the condition for the loop to run (i must be less than 5). If the condition is true, the loop will start over again, if it is false, the loop will end.
+
+Statement 3 increases a value (i++) each time the code block in the loop has been executed.
+
+Nested loops
+It is possible to make a loop inside a loop
+The inner loop will be executed each time when the outside loop is executed
+
+Outer loop
+for (int i = 1; i <= 2; ++i) {
+  cout << "Outer: " << i << "\n"; // Executes 2 times
+
+Inner loop
+  for (int j = 1; j <= 3; ++j) {
+	cout << " Inner: " << j << "\n"; // Executes 6 times (2 * 3)
+  }
+}
+
+Foreach loop
+This loop is exclusively used to loop through elements in an array
+example
+for (type variableName : arrayName) {
+   Code executes here
+}
+----
+int myNumbers[5] = {10, 20, 30, 40, 50};
+for (int i : myNumbers) {
+  cout << i << "\n";
+}
+---
+While talking about loops you can break out of them by using the break statement aswell
+Example(breaks when i is valued at 4):
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+	break;
+  }
+  cout << i << "\n";
+}
+There is also a continue statement that only breaks one iteration in a loop
+so that if a specific condition occurs it can continue to the next iteration in the loop
+Example(This time it will not print 4);
+for (int i = 0; i < 10; i++) {
+  if (i == 4) {
+	continue;
+  }
+  cout << i << "\n";
+}
+
+You can use both in a while loop aswell so keep that in mind!
+
+--------------
+Arrays
+Arrays can be used to store mulitple values in one variable so instead
+of declaring seperate variables for each value you can use an array instead.
+
+To define a variable you need to specify the name of the array followed by square brackets
+and a specify a number of elements it can store
+
+example:
+string cars[4];
+
+---
+Now we got a variable declared it can hold upto 4 strings if you want to add values to it
+you can use a array literal "places the values in a comma-seperated list inside curly braces)
+example:
+*/
+string cars[4] = { "Bugatti", "BMW", "lamborgini", "Hellcat" };
+/*
+
+The same would be done to create three integers
+example:
+int myNum[3] = {10, 20, 30};
+
+Now there would be no points of an array if we can not access it so to do that we 
+refer to the index number inside the square brackets
+The example below will accsess the first element in the cars (It will be bugatti)
+*/
+cout << cars[0];
+
+/*
+
+(These array indexes always start with 0 being the first element and 1 being the second)
+
+To change an element inside an array you refer to the index value like this
+cars[0] = "Nissan";
+Lets see it in action!
+*/
+cars[0] = "Opel";
+cout << cars[0];
+
+/*
+
+Now if you would like to loop through a bunch of arrays you can use the for loop method
+example:
+*/
+for (int i = 0; i < 5; i++) {//  makes a value called i and compares it to 5 if its smaller it adds 1 to i
+	cout << cars[i] << "\n";
+}
+/*
+
+Remember when we talked about the foreach loop? Well its entire purpose in life
+is to be used in arrays like this!
+
+for (type variableName : arrayName) {
+  // code block to be executed
+}
+Lets see it in action!
+*/
+int myNumbers[5] = { 10, 20, 30, 40, 50 };
+for (int i : myNumbers) {
+	cout << i << "\n";
+}
+/*  
+
+Infinte arrays/Omit arrays
+You dont really need to specify the size of the array
+The c++ complier is smart enough to determine a size based on values added to it
+
+string bananas[] = {"1Banana", "2Banana", "3Banana"}; // Three array elements
+
+The example above is comparable to this below
+string bananas[3] = {"1Banana", "2Banana", "3Banana"}; // Three array elements
+It is basically the same thing just that without specifying a value you can add infinte amount of arrays
+But it is a better approach to specify the value to reduce the amount of errors.
+
+You can also declare an array without specifying any elements and you can add them later
+example:
+
+string Games[5];
+cars[0] = "Fortnite";
+cars[1] = "Minecraft";
 
 */
-
-	return 0;
+return 0;
 }
